@@ -28,6 +28,7 @@ const navItems = [
   ["How it works", "#how-it-works"],
   ["The ramp walk", "#ramp-walk"],
   ["FAQ", "#faq"],
+  ["About", "/about"],
 ];
 
 const steps = [
@@ -145,7 +146,7 @@ export default function Home() {
           <Logo />
           <nav className={`main-nav ${mobileMenuOpen ? "open" : ""}`} aria-label="Primary navigation">
             {navItems.map(([label, href]) => <a key={href} href={href} onClick={() => setMobileMenuOpen(false)}>{label}</a>)}
-            <button className="button button-coral nav-register" onClick={() => { setRegisterOpen(true); setMobileMenuOpen(false); }}>Register <ArrowUpRight size={15} /></button>
+            <button className="button button-coral nav-register" onClick={() => { window.location.href = "/register"; setMobileMenuOpen(false); }}>Register <ArrowUpRight size={15} /></button>
           </nav>
           <button className="mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>{mobileMenuOpen ? <X /> : <Menu />}</button>
         </div>
@@ -158,7 +159,7 @@ export default function Home() {
               <Reveal><div className="eyebrow"><span className="eyebrow-dot" /> Ranchi · 30 September</div></Reveal>
               <Reveal delay={0.06}><h1>Dress loud.<br /><span>Walk proud.</span></h1></Reveal>
               <Reveal delay={0.12}><p className="hero-lede">A live costume contest for icons, misfits, and main characters from the 70s–80s. Bring the look. Own the room. Dance it out.</p></Reveal>
-              <Reveal delay={0.18}><div className="hero-actions"><button className="button button-coral" onClick={() => setRegisterOpen(true)}>Register your look <ArrowUpRight size={17} /></button><button className="text-button" onClick={() => scrollTo("#the-vibe")}>See the vibe <ArrowDownRight size={17} /></button></div></Reveal>
+              <Reveal delay={0.18}><div className="hero-actions"><button className="button button-coral" onClick={() => { window.location.href = "/register"; }}>Register your look <ArrowUpRight size={17} /></button><button className="text-button" onClick={() => scrollTo("#the-vibe")}>See the vibe <ArrowDownRight size={17} /></button></div></Reveal>
               <Reveal delay={0.24}><div className="hero-meta"><span><CalendarDays size={15} /> DATE - 30/09/2026</span><span className="meta-divider" /><span><MapPin size={15} /> VENUE TO BE ANNOUNCED</span></div></Reveal>
             </div>
             <Reveal delay={0.12} className="hero-art-wrap">
@@ -199,7 +200,7 @@ export default function Home() {
         <section className="ramp-section section-pad era-section" id="ramp-walk">
           <div className="ramp-sunburst" />
           <div className="page-width ramp-inner">
-            <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / FIND YOUR ERA</div><h2>Pick your<br /><em>era.</em></h2></Reveal><Reveal delay={0.08}><p>Go all-in on one decade or make the rules your own. Choose the energy that gets you excited to walk through the door.</p><button className="button button-cream" onClick={() => setRegisterOpen(true)}>Register your look <ArrowUpRight size={17} /></button></Reveal></div>
+            <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / FIND YOUR ERA</div><h2>Pick your<br /><em>era.</em></h2></Reveal><Reveal delay={0.08}><p>Go all-in on one decade or make the rules your own. Choose the energy that gets you excited to walk through the door.</p><button className="button button-cream" onClick={() => { window.location.href = "/register"; }}>Register your look <ArrowUpRight size={17} /></button></Reveal></div>
             <div className="era-picker" aria-label="Retro era inspiration">
               {[{ id: "70s", label: "THE 70s", title: "Disco fever", copy: "Flared confidence, shimmer, soul, and a little more sparkle than strictly necessary.", className: "era-card-70" }, { id: "80s", label: "THE 80s", title: "New wave", copy: "Power shoulders, arcade energy, pop icons, and colour that refuses to whisper.", className: "era-card-80" }, { id: "mix", label: "MIX IT UP", title: "Your own rules", copy: "Take the best bits of both decades and make a look nobody else could have planned.", className: "era-card-mix" }].map((era, index) => <Reveal key={era.id} delay={index * 0.08} className={`era-card ${era.className}`}><div className="era-card-panel"><span className="era-card-label">{era.label}</span><span className="era-card-number">0{index + 1}</span><span className="era-card-mark">{era.id === "70s" ? "✦" : era.id === "80s" ? "✳" : "✦✳"}</span><span className="era-card-title">{era.title}</span><span className="era-card-copy">{era.copy}</span><span className="era-card-action">Get inspired <ArrowUpRight size={14} /></span></div></Reveal>)}
             </div>
@@ -211,8 +212,8 @@ export default function Home() {
           <div className="page-width">
             <div className="section-heading heading-split"><Reveal><div><div className="section-kicker">04 / TICKETS + REGISTRATION</div><h2>Pick your<br /><em>entrance.</em></h2></div></Reveal><Reveal delay={0.08}><p>Ticket tiers and pricing are being confirmed. Join the early list now and you’ll get first dibs when registration opens.</p></Reveal></div>
             <div className="ticket-layout">
-              <Reveal className="ticket-card featured"><div className="ticket-card-top"><span className="ticket-label">SOLO CONTESTANT</span><Ticket size={22} /></div><h3>Contestant</h3><p className="ticket-description">Your official pass to the ramp walk, judging, and after-party.</p><div className="ticket-price">₹999 <small>per person</small></div><ul><li><Check size={15} /> Contestant registration</li><li><Check size={15} /> Ramp walk + judging</li><li><Check size={15} /> After-party access</li></ul><button className="button button-dark button-wide" onClick={() => setRegisterOpen(true)}>Register your look <ArrowUpRight size={17} /></button><div className="spots"><span className="spots-dot" /> Spots remaining: <b>TBA</b></div></Reveal>
-              <Reveal delay={0.1} className="ticket-stack"><div className="ticket-card mini"><div><div className="ticket-label coral-text">COME TO DANCE</div><h3>General entry</h3><p>Free entry for everyone. Watch the looks, cheer loud, and stay for the music.</p></div><div className="mini-bottom"><span>FREE</span><button className="round-button" onClick={() => setRegisterOpen(true)} aria-label="Register for general entry"><ArrowUpRight size={18} /></button></div></div><div className="ticket-card mini duo-card"><div><div className="ticket-label">COUPLE / DUO</div><h3>Two on the ramp</h3><p>For duos, couples, and coordinated main-character energy.</p></div><div className="mini-bottom"><span>₹1,999</span><button className="round-button dark-round" onClick={() => setRegisterOpen(true)} aria-label="Register as a couple or duo"><ArrowUpRight size={18} /></button></div></div></Reveal>
+              <Reveal className="ticket-card featured"><div className="ticket-card-top"><span className="ticket-label">SOLO CONTESTANT</span><Ticket size={22} /></div><h3>Contestant</h3><p className="ticket-description">Your official pass to the ramp walk, judging, and after-party.</p><div className="ticket-price">₹999 <small>per person</small></div><ul><li><Check size={15} /> Contestant registration</li><li><Check size={15} /> Ramp walk + judging</li><li><Check size={15} /> After-party access</li></ul><button className="button button-dark button-wide" onClick={() => { window.location.href = "/register"; }}>Register your look <ArrowUpRight size={17} /></button><div className="spots"><span className="spots-dot" /> Spots remaining: <b>TBA</b></div></Reveal>
+              <Reveal delay={0.1} className="ticket-stack"><div className="ticket-card mini"><div><div className="ticket-label coral-text">COME TO DANCE</div><h3>General entry</h3><p>Free entry for everyone. Watch the looks, cheer loud, and stay for the music.</p></div><div className="mini-bottom"><span>FREE</span><button className="round-button" onClick={() => { window.location.href = "/register"; }} aria-label="Register for general entry"><ArrowUpRight size={18} /></button></div></div><div className="ticket-card mini duo-card"><div><div className="ticket-label">COUPLE / DUO</div><h3>Two on the ramp</h3><p>For duos, couples, and coordinated main-character energy.</p></div><div className="mini-bottom"><span>₹1,999</span><button className="round-button dark-round" onClick={() => { window.location.href = "/register"; }} aria-label="Register as a couple or duo"><ArrowUpRight size={18} /></button></div></div></Reveal>
             </div>
             <div className="payment-note"><span><Sparkles size={16} /> SECURE CHECKOUT</span><p>Razorpay sandbox checkout will be wired once final tiers are confirmed. UPI · Cards · Netbanking. Stripe fallback available for future international entries.</p></div>
           </div>
