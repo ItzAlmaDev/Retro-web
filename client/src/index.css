@@ -104,6 +104,12 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
 .vibe-card { min-width: 0; }
 .vibe-illustration { position: relative; overflow: hidden; height: 335px; border: 1px solid var(--ink); }
 .vibe-card-large .vibe-illustration { height: 430px; }
+.photo-art { background: var(--cream); }
+.vibe-photo { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.88) contrast(.96); transition: transform .35s var(--ease-out), filter .35s ease; }
+.vibe-card:hover .vibe-photo { transform: scale(1.035); filter: saturate(1) contrast(1); }
+.vibe-photo-suit { object-position: center 28%; }
+.vibe-photo-sari { object-position: center 34%; }
+.vibe-photo-brown { object-position: center 30%; }
 .vinyl-art { background: var(--mustard); }
 .sun-lines { position: absolute; width: 290px; height: 290px; border-radius: 50%; top: 42px; left: 50%; transform: translateX(-50%); background: repeating-conic-gradient(from 0deg, var(--coral) 0deg 8deg, transparent 8deg 18deg); opacity: .7; }
 .record-disc { position: absolute; width: 235px; height: 235px; border-radius: 50%; background: radial-gradient(circle at center, var(--mustard) 0 10%, var(--ink) 11% 15%, #242d35 16% 20%, var(--ink) 21% 38%, #31353a 39% 40%, var(--ink) 41% 100%); right: -27px; bottom: -44px; box-shadow: -13px -10px 0 rgba(19,25,33,.14); }
