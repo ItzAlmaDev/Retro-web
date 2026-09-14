@@ -11,7 +11,6 @@ import {
   Mail,
   MapPin,
   Menu,
-  Music2,
   Plus,
   Sparkles,
   Star,
@@ -29,14 +28,6 @@ const navItems = [
   ["How it works", "#how-it-works"],
   ["The ramp walk", "#ramp-walk"],
   ["FAQ", "#faq"],
-];
-
-const marqueeItems = [
-  "70s & 80s all night",
-  "Bring your crew",
-  "Walk the ramp",
-  "Prizes for the bold",
-  "Dress like your icon",
 ];
 
 const steps = [
@@ -71,23 +62,8 @@ function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; 
 function Logo() {
   return (
     <a className="brand" href="#top" aria-label="Retro Event home">
-      <span className="brand-mark"><Music2 size={17} strokeWidth={2.5} /></span>
-      <span>RETRO<br /><em>EVENT</em></span>
+      <span className="brand-wordmark">RETRO <em>EVENT</em></span>
     </a>
-  );
-}
-
-function Marquee() {
-  return (
-    <div className="marquee" aria-label="Event highlights">
-      <div className="marquee-track">
-        {[...marqueeItems, ...marqueeItems].map((item, index) => (
-          <span className="marquee-item" key={`${item}-${index}`}>
-            <span className="marquee-star">✳</span>{item}
-          </span>
-        ))}
-      </div>
-    </div>
   );
 }
 
@@ -164,7 +140,6 @@ export default function Home() {
 
   return (
     <div className="site-shell" id="top">
-      <Marquee />
       <header className="site-header">
         <div className="header-inner">
           <Logo />
@@ -225,9 +200,9 @@ export default function Home() {
         <section className="ramp-section section-pad" id="ramp-walk">
           <div className="ramp-sunburst" />
           <div className="page-width ramp-inner">
-            <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / THE RAMP WALK</div><h2>The main<br /><em>event.</em></h2></Reveal><Reveal delay={0.08}><p>One minute. One entrance. Zero hiding. The ramp is your stage and the crowd is ready for the reveal.</p><button className="button button-cream" onClick={() => setRegisterOpen(true)}>I’m walking <ArrowUpRight size={17} /></button></Reveal></div>
-            <div className="ramp-timeline"><Reveal><div className="timeline-line" /><div className="timeline-item"><span>01</span><div><b>Backstage</b><p>Check-in, name tag, last-minute glitter.</p></div></div></Reveal><Reveal delay={0.1}><div className="timeline-item"><span>02</span><div><b>The entrance</b><p>Your song hits. Your look lands. The room reacts.</p></div></div></Reveal><Reveal delay={0.2}><div className="timeline-item"><span>03</span><div><b>The verdict</b><p>Judges score the story, the styling, and the audacity.</p></div></div></Reveal><Reveal delay={0.3}><div className="timeline-item"><span>04</span><div><b>The after-party</b><p>Winners, photos, and a dance floor that stays open.</p></div></div></Reveal></div>
-            <div className="judging-row"><span><Users size={18} /> LIVE JUDGING</span><span><Trophy size={18} /> BEST 70s · BEST 80s · BEST GROUP · CROWD FAVOURITE</span><span><Clock3 size={18} /> 1 MINUTE EACH</span></div>
+            <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / EVENT SNAPSHOT</div><h2>Come for<br /><em>the moment.</em></h2></Reveal><Reveal delay={0.08}><p>A free-flowing night built for good looks, good music, and meeting people who know the difference between an outfit and an entrance.</p><button className="button button-cream" onClick={() => setRegisterOpen(true)}>Join the list <ArrowUpRight size={17} /></button></Reveal></div>
+            <div className="ramp-timeline"><Reveal><div className="timeline-item"><span>01</span><div><b>Doors open</b><p>Meet the crowd, take a photo, and settle into the throwback mood.</p></div></div></Reveal><Reveal delay={0.1}><div className="timeline-item"><span>02</span><div><b>Looks arrive</b><p>Bring your era, your crew, and your best entrance energy.</p></div></div></Reveal><Reveal delay={0.2}><div className="timeline-item"><span>03</span><div><b>Music starts</b><p>Dance floor favourites, live judging, and a soundtrack with range.</p></div></div></Reveal><Reveal delay={0.3}><div className="timeline-item"><span>04</span><div><b>Stay late</b><p>Photos, prizes, and an after-party made for one more song.</p></div></div></Reveal></div>
+            <div className="judging-row"><span><Users size={18} /> ALL ARE WELCOME</span><span><Trophy size={18} /> COSTUME CONTEST · PRIZES · CROWD FAVOURITE</span><span><Clock3 size={18} /> DATE — TBA</span></div>
           </div>
         </section>
 
@@ -235,8 +210,8 @@ export default function Home() {
           <div className="page-width">
             <div className="section-heading heading-split"><Reveal><div><div className="section-kicker">04 / TICKETS + REGISTRATION</div><h2>Pick your<br /><em>entrance.</em></h2></div></Reveal><Reveal delay={0.08}><p>Ticket tiers and pricing are being confirmed. Join the early list now and you’ll get first dibs when registration opens.</p></Reveal></div>
             <div className="ticket-layout">
-              <Reveal className="ticket-card featured"><div className="ticket-card-top"><span className="ticket-label">MOST POPULAR</span><Ticket size={22} /></div><h3>Contestant</h3><p className="ticket-description">Your official pass to the ramp walk, judging, and after-party.</p><div className="ticket-price">₹ TBA <small>per person</small></div><ul><li><Check size={15} /> Contestant registration</li><li><Check size={15} /> Ramp walk + judging</li><li><Check size={15} /> After-party access</li></ul><button className="button button-dark button-wide" onClick={() => setRegisterOpen(true)}>Register your look <ArrowUpRight size={17} /></button><div className="spots"><span className="spots-dot" /> Spots remaining: <b>TBA</b></div></Reveal>
-              <Reveal delay={0.1} className="ticket-stack"><div className="ticket-card mini"><div><div className="ticket-label coral-text">COME TO DANCE</div><h3>General entry</h3><p>Watch the looks. Cheer loud. Stay for the music.</p></div><div className="mini-bottom"><span>₹ TBA</span><button className="round-button" onClick={() => setRegisterOpen(true)} aria-label="Register for general entry"><ArrowUpRight size={18} /></button></div></div><div className="ticket-card mini olive-card"><div><div className="ticket-label">BRING YOUR CREW</div><h3>Group entry</h3><p>For duos, crews, and coordinated main-character energy.</p></div><div className="mini-bottom"><span>₹ TBA</span><button className="round-button dark-round" onClick={() => setRegisterOpen(true)} aria-label="Register as a group"><ArrowUpRight size={18} /></button></div></div></Reveal>
+              <Reveal className="ticket-card featured"><div className="ticket-card-top"><span className="ticket-label">SOLO CONTESTANT</span><Ticket size={22} /></div><h3>Contestant</h3><p className="ticket-description">Your official pass to the ramp walk, judging, and after-party.</p><div className="ticket-price">₹999 <small>per person</small></div><ul><li><Check size={15} /> Contestant registration</li><li><Check size={15} /> Ramp walk + judging</li><li><Check size={15} /> After-party access</li></ul><button className="button button-dark button-wide" onClick={() => setRegisterOpen(true)}>Register your look <ArrowUpRight size={17} /></button><div className="spots"><span className="spots-dot" /> Spots remaining: <b>TBA</b></div></Reveal>
+              <Reveal delay={0.1} className="ticket-stack"><div className="ticket-card mini"><div><div className="ticket-label coral-text">COME TO DANCE</div><h3>General entry</h3><p>Free entry for everyone. Watch the looks, cheer loud, and stay for the music.</p></div><div className="mini-bottom"><span>FREE</span><button className="round-button" onClick={() => setRegisterOpen(true)} aria-label="Register for general entry"><ArrowUpRight size={18} /></button></div></div><div className="ticket-card mini duo-card"><div><div className="ticket-label">COUPLE / DUO</div><h3>Two on the ramp</h3><p>For duos, couples, and coordinated main-character energy.</p></div><div className="mini-bottom"><span>₹1,999</span><button className="round-button dark-round" onClick={() => setRegisterOpen(true)} aria-label="Register as a couple or duo"><ArrowUpRight size={18} /></button></div></div></Reveal>
             </div>
             <div className="payment-note"><span><Sparkles size={16} /> SECURE CHECKOUT</span><p>Razorpay sandbox checkout will be wired once final tiers are confirmed. UPI · Cards · Netbanking. Stripe fallback available for future international entries.</p></div>
           </div>
@@ -246,7 +221,7 @@ export default function Home() {
           <div className="page-width faq-layout"><Reveal><div><div className="section-kicker">05 / FAQ</div><h2>Questions,<br /><em>answered.</em></h2><p className="faq-aside-copy">Still curious? Drop us a note and we’ll get back to you with the good stuff.</p><a className="mail-link" href="mailto:hello@retroevent.example"><Mail size={16} /> hello@retroevent.example</a></div></Reveal><Reveal delay={0.08} className="faq-list">{faqs.map(([question, answer], index) => <div className={`faq-item ${openFaq === index ? "open" : ""}`} key={question}><button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} aria-expanded={openFaq === index}><span>{question}</span>{openFaq === index ? <ChevronDown className="rotate" size={18} /> : <Plus size={18} />}</button>{openFaq === index && <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="faq-answer"><p>{answer}</p></motion.div>}</div>)}</Reveal></div>
         </section>
 
-        <section className="notify-section section-pad"><div className="page-width notify-inner"><div className="notify-copy"><div className="section-kicker light">VENUE TBA / [CITY]</div><h2>We’ll tell you<br /><em>where to be.</em></h2><p>The venue is being locked now. Leave your email and you’ll be the first to know when the doors, date, and ticket link go live.</p></div><form className="notify-form" onSubmit={notifySubmit}><label htmlFor="notify-email">Email address</label><div className="notify-input"><input id="notify-email" type="email" required placeholder="you@email.com" /><button className="button button-cream" type="submit">Notify me <ArrowUpRight size={17} /></button></div><small>No spam. Just one very good night.</small></form><div className="notify-sun">✳</div></div></section>
+        <section className="notify-section section-pad"><div className="page-width notify-inner"><div className="notify-copy"><div className="section-kicker light">QUESTIONS · COLLABS · SPONSORS</div><h2>Let’s make<br /><em>some noise.</em></h2><p>Questions, collabs, sponsors — we’re here. Tell us what you have in mind and the Retro Event crew will get back to you.</p></div><form className="notify-form contact-form" onSubmit={notifySubmit}><label htmlFor="contact-name">Name</label><input id="contact-name" type="text" required placeholder="Your name" /><label htmlFor="contact-email">Email address</label><input id="contact-email" type="email" required placeholder="you@email.com" /><label htmlFor="contact-message">Message</label><textarea id="contact-message" required placeholder="What can we make together?" /><button className="button button-cream" type="submit">Send it <ArrowUpRight size={17} /></button><small>No spam. Just one very good night.</small></form><div className="notify-sun">✳</div></div></section>
       </main>
 
       <footer className="site-footer"><div className="page-width footer-grid"><Logo /><div className="footer-links"><div><span className="footer-label">Explore</span><a href="#the-vibe">The vibe</a><a href="#how-it-works">How it works</a><a href="#ramp-walk">The ramp walk</a></div><div><span className="footer-label">Say hello</span><a href="mailto:hello@retroevent.example">Email us</a><a href="#top">Instagram</a><a href="#top">Terms + privacy</a></div></div><div className="footer-signoff"><span>MAKE AN<br />ENTRANCE.</span><a className="round-button footer-round" href="#top" aria-label="Back to top"><ArrowUpRight size={18} /></a></div></div><div className="page-width footer-bottom"><span>© 2026 RETRO EVENT</span><span>MADE FOR THE BOLD</span><span><Instagram size={14} /> @RETROEVENT</span></div></footer>
