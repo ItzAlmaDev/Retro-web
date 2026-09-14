@@ -214,10 +214,10 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
 .faq-answer { overflow: hidden; }
 .faq-answer p { max-width: 610px; color: var(--muted-ink); font-size: 14px; line-height: 1.6; padding: 0 40px 22px 0; }
 .notify-section { background: var(--coral); color: var(--cream); position: relative; overflow: hidden; }
-.notify-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: end; position: relative; z-index: 1; }
+.notify-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: start; position: relative; z-index: 1; }
 .notify-copy h2 { color: var(--cream); }
 .notify-copy p { max-width: 385px; color: rgba(247,241,228,.8); font-size: 14px; line-height: 1.6; margin-top: 28px; }
-.notify-form { padding-bottom: 4px; }
+.notify-form { padding-top: 2px; padding-bottom: 4px; }
 .notify-form label { display: block; font: 700 10px "Space Grotesk", sans-serif; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 10px; }
 .notify-input { display: flex; gap: 8px; border-bottom: 1px solid rgba(247,241,228,.65); padding-bottom: 9px; }
 .notify-input input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--cream); font: 400 20px "Bree Serif", serif; }
