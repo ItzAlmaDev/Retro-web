@@ -167,7 +167,7 @@ export default function Home() {
                 <div className="hero-art-caption"><span>THE SOUNDTRACK<br />TO YOUR LOOK</span><span className="caption-arrow">↗</span></div>
               </div>
               <div className="hero-sticker sticker-left">NO<br />BORING<br />LOOKS</div>
-              <div className="hero-sticker sticker-right"><Headphones size={16} /> ALL<br />NIGHT</div>
+              <div className="hero-sticker sticker-right"><span className="sticker-right-content"><Headphones size={16} /><span>ALL<br />NIGHT</span></span></div>
             </Reveal>
           </div>
           <div className="hero-bottom-rule page-width"><span>THE STYLE SHOWDOWN</span><span>01 / 09</span></div>

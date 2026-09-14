@@ -90,7 +90,8 @@ h1 span, h2 em { color: var(--coral); font-style: normal; }
 .caption-arrow { font-size: 24px; line-height: .75; }
 .hero-sticker { position: absolute; z-index: 3; display: grid; place-items: center; text-align: center; font-family: "Bree Serif", Georgia, serif; line-height: .9; letter-spacing: -.02em; }
 .sticker-left { width: 106px; height: 106px; left: -29px; top: 82px; background: var(--coral); color: var(--cream); border-radius: 49% 51% 52% 48%; transform: rotate(-13deg); font-size: 20px; }
-.sticker-right { width: 77px; height: 77px; right: -16px; bottom: 56px; background: var(--mustard); color: var(--ink); border-radius: 50%; transform: rotate(11deg); font-size: 15px; gap: 3px; }
+.sticker-right { width: 77px; height: 77px; right: -16px; bottom: 56px; background: var(--mustard); color: var(--ink); border-radius: 50%; transform: rotate(11deg); font-size: 15px; }
+.sticker-right-content { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-align: center; }
 .hero-bottom-rule { margin-top: 71px; border-top: 1px solid var(--line); padding-top: 15px; display: flex; justify-content: space-between; color: var(--muted-ink); font-family: "Space Grotesk", sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .14em; }
 .section-kicker { color: var(--coral); margin-bottom: 22px; }
 .section-kicker.light { color: var(--mustard); }
@@ -106,7 +107,7 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
 .photo-art { background: var(--cream); }
 .vibe-photo { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.88) contrast(.96); transition: transform .35s var(--ease-out), filter .35s ease; }
 .vibe-card:hover .vibe-photo { transform: scale(1.035); filter: saturate(1) contrast(1); }
-.vibe-photo-suit { object-position: center 28%; }
+.vibe-photo-suit { object-position: center 11%; }
 .vibe-photo-sari { object-position: center 34%; }
 .vibe-photo-brown { object-position: center 30%; }
 .vinyl-art { background: var(--mustard); }
