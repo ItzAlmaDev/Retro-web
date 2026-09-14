@@ -153,6 +153,27 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
 .timeline-item p { color: rgba(247,241,228,.58); font-size: 12px; line-height: 1.5; margin-top: 13px; max-width: 175px; }
 .judging-row { display: flex; justify-content: space-between; border-top: 1px solid rgba(247,241,228,.22); padding-top: 20px; color: var(--mustard); font: 700 10px "Space Grotesk", sans-serif; letter-spacing: .12em; }
 .judging-row span { display: inline-flex; gap: 8px; align-items: center; }
+.era-picker { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 48px 0 38px; }
+.era-card { min-width: 0; }
+.era-card button { width: 100%; min-height: 300px; border: 1px solid rgba(247,241,228,.26); padding: 21px; background: transparent; color: var(--cream); text-align: left; display: flex; flex-direction: column; cursor: pointer; position: relative; overflow: hidden; transition: transform .2s var(--ease-out), background .2s ease, border-color .2s ease; }
+.era-card button:hover, .era-card.selected button { transform: translateY(-6px); border-color: var(--mustard); background: rgba(247,241,228,.08); }
+.era-card-70 button { background: rgba(230,92,59,.86); }
+.era-card-80 button { background: rgba(164,164,88,.74); }
+.era-card-mix button { background: rgba(235,184,63,.86); color: var(--ink); }
+.era-card-label, .era-card-number { font: 700 10px "Space Grotesk", sans-serif; letter-spacing: .14em; }
+.era-card-label { color: var(--mustard); }
+.era-card-mix .era-card-label { color: var(--ink); }
+.era-card-number { position: absolute; top: 21px; right: 21px; opacity: .68; }
+.era-card-mark { font: 400 94px/1 "Bree Serif", serif; margin: 30px 0 12px; color: var(--mustard); opacity: .9; }
+.era-card-80 .era-card-mark { color: var(--ink); }
+.era-card-mix .era-card-mark { color: var(--coral); }
+.era-card-title { font: 400 31px/.95 "Bree Serif", serif; }
+.era-card-copy { font-size: 12px; line-height: 1.5; color: rgba(247,241,228,.78); max-width: 240px; margin-top: 12px; }
+.era-card-mix .era-card-copy { color: rgba(19,25,33,.72); }
+.era-card-action { display: inline-flex; gap: 7px; align-items: center; margin-top: auto; padding-top: 24px; font: 700 10px "Space Grotesk", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.era-footer { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(247,241,228,.22); padding-top: 17px; color: rgba(247,241,228,.7); font: 700 10px "Space Grotesk", sans-serif; letter-spacing: .12em; }
+.era-footer span { display: inline-flex; align-items: center; gap: 8px; }
+.era-footer b { color: var(--mustard); }
 .tickets-section { background: var(--paper); }
 .ticket-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 15px; align-items: stretch; }
 .ticket-card { border: 1px solid var(--ink); padding: 27px; background: var(--cream); }
@@ -296,6 +317,12 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
   .step-card:not(:first-child) { border-top: 1px solid var(--line); }
   .step-top { margin-bottom: 32px; }
   .ramp-heading { padding-bottom: 50px; }
+  .era-picker { grid-template-columns: 1fr; gap: 12px; padding: 34px 0 30px; }
+  .era-card button { min-height: 224px; padding: 18px; }
+  .era-card-mark { font-size: 65px; margin: 14px 0 5px; }
+  .era-card-title { font-size: 27px; }
+  .era-card-copy { max-width: 275px; }
+  .era-footer { flex-direction: column; gap: 12px; line-height: 1.4; }
   .ramp-timeline { grid-template-columns: 1fr; padding: 35px 0 42px; gap: 0; }
   .timeline-item, .timeline-item:not(:first-of-type), .timeline-item:nth-child(3) { border-left: 0; padding: 18px 0; min-height: auto; border-bottom: 1px solid rgba(247,241,228,.22); }
   .timeline-item:first-of-type { padding-top: 0; }

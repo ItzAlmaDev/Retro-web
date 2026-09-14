@@ -126,6 +126,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+  const [selectedEra, setSelectedEra] = useState("mix");
 
   function scrollTo(section: string) {
     document.querySelector(section)?.scrollIntoView({ behavior: "smooth" });
@@ -197,12 +198,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="ramp-section section-pad" id="ramp-walk">
+        <section className="ramp-section section-pad era-section" id="ramp-walk">
           <div className="ramp-sunburst" />
           <div className="page-width ramp-inner">
-            <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / PROGRAM DETAILS</div><h2>One night.<br /><em>Four big beats.</em></h2></Reveal><Reveal delay={0.08}><p>From the first entrance to the final encore, this is a live retro celebration with sharp looks, big sound, and prizes worth showing up for.</p><button className="button button-cream" onClick={() => setRegisterOpen(true)}>Join the list <ArrowUpRight size={17} /></button></Reveal></div>
-            <div className="ramp-timeline"><Reveal><div className="timeline-item"><span>01</span><div><b>Meet the judges</b><p>Our judging panel sets the tone and gets ready to score the boldest looks in the room.</p></div></div></Reveal><Reveal delay={0.1}><div className="timeline-item"><span>02</span><div><b>Dress-up contest</b><p>Walk in your 70s or 80s-inspired look and give the crowd a moment to remember.</p></div></div></Reveal><Reveal delay={0.2}><div className="timeline-item"><span>03</span><div><b>Live music</b><p>Turn up the throwback soundtrack with live performances and a dance floor built to move.</p></div></div></Reveal><Reveal delay={0.3}><div className="timeline-item"><span>04</span><div><b>Prizes + after-party</b><p>Celebrate the winners, crown the crowd favourite, and keep the music going late.</p></div></div></Reveal></div>
-            <div className="judging-row"><span><Users size={18} /> LIVE JUDGING</span><span><Trophy size={18} /> BEST 70s · BEST 80s · BEST GROUP · CROWD FAVOURITE</span><span><Clock3 size={18} /> 30 SEPTEMBER</span></div>
+            <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / FIND YOUR ERA</div><h2>Pick your<br /><em>era.</em></h2></Reveal><Reveal delay={0.08}><p>Go all-in on one decade or make the rules your own. Choose the energy that gets you excited to walk through the door.</p><button className="button button-cream" onClick={() => setRegisterOpen(true)}>Register your look <ArrowUpRight size={17} /></button></Reveal></div>
+            <div className="era-picker" role="tablist" aria-label="Choose your retro era">
+              {[{ id: "70s", label: "THE 70s", title: "Disco fever", copy: "Flared confidence, shimmer, soul, and a little more sparkle than strictly necessary.", className: "era-card-70" }, { id: "80s", label: "THE 80s", title: "New wave", copy: "Power shoulders, arcade energy, pop icons, and colour that refuses to whisper.", className: "era-card-80" }, { id: "mix", label: "MIX IT UP", title: "Your own rules", copy: "Take the best bits of both decades and make a look nobody else could have planned.", className: "era-card-mix" }].map((era, index) => <Reveal key={era.id} delay={index * 0.08} className={`era-card ${era.className} ${selectedEra === era.id ? "selected" : ""}`}><button role="tab" aria-selected={selectedEra === era.id} onClick={() => setSelectedEra(era.id)}><span className="era-card-label">{era.label}</span><span className="era-card-number">0{index + 1}</span><span className="era-card-mark">{era.id === "70s" ? "✦" : era.id === "80s" ? "✳" : "✦✳"}</span><span className="era-card-title">{era.title}</span><span className="era-card-copy">{era.copy}</span><span className="era-card-action">{selectedEra === era.id ? "Selected" : "Choose this era"} <ArrowUpRight size={14} /></span></button></Reveal>)}
+            </div>
+            <div className="era-footer"><span><Sparkles size={17} /> YOUR ERA: <b>{selectedEra === "70s" ? "THE 70s" : selectedEra === "80s" ? "THE 80s" : "A MIX OF BOTH"}</b></span><span>JUDGES · LIVE MUSIC · PRIZES · AFTER-PARTY</span></div>
           </div>
         </section>
 
