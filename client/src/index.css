@@ -209,7 +209,7 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
 .payment-note span { display: inline-flex; align-items: center; gap: 8px; color: var(--coral); font: 700 10px "Space Grotesk", sans-serif; letter-spacing: .13em; }
 .payment-note p { color: var(--muted-ink); font-size: 12px; line-height: 1.5; }
 .faq-section { background: var(--cream); border-top: 1px solid var(--line); }
-.faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 110px; }
+.faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 110px; align-items: start; }
 .faq-aside-copy { color: var(--muted-ink); font-size: 14px; line-height: 1.6; margin-top: 30px; max-width: 230px; }
 .mail-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 22px; color: var(--coral); font: 700 11px "Space Grotesk", sans-serif; letter-spacing: .05em; }
 .faq-list { border-top: 1px solid var(--line); }
