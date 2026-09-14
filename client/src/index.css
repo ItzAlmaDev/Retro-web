@@ -322,6 +322,7 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
   .era-card-title { font-size: 27px; }
   .era-card-copy { max-width: 275px; }
   .era-footer { flex-direction: column; gap: 12px; line-height: 1.4; }
+  .ticket-stack .duo-card { order: -1; }
   .ramp-timeline { grid-template-columns: 1fr; padding: 35px 0 42px; gap: 0; }
   .timeline-item, .timeline-item:not(:first-of-type), .timeline-item:nth-child(3) { border-left: 0; padding: 18px 0; min-height: auto; border-bottom: 1px solid rgba(247,241,228,.22); }
   .timeline-item:first-of-type { padding-top: 0; }
