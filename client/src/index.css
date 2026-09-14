@@ -155,11 +155,10 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
 .judging-row span { display: inline-flex; gap: 8px; align-items: center; }
 .era-picker { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 48px 0 38px; }
 .era-card { min-width: 0; }
-.era-card button { width: 100%; min-height: 300px; border: 1px solid rgba(247,241,228,.26); padding: 21px; background: transparent; color: var(--cream); text-align: left; display: flex; flex-direction: column; cursor: pointer; position: relative; overflow: hidden; transition: transform .2s var(--ease-out), background .2s ease, border-color .2s ease; }
-.era-card button:hover, .era-card.selected button { transform: translateY(-6px); border-color: var(--mustard); background: rgba(247,241,228,.08); }
-.era-card-70 button { background: rgba(230,92,59,.86); }
-.era-card-80 button { background: rgba(164,164,88,.74); }
-.era-card-mix button { background: rgba(235,184,63,.86); color: var(--ink); }
+.era-card-panel { width: 100%; min-height: 300px; height: 100%; border: 1px solid rgba(247,241,228,.26); padding: 21px; background: transparent; color: var(--cream); text-align: left; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.era-card-70 .era-card-panel { background: rgba(230,92,59,.86); }
+.era-card-80 .era-card-panel { background: rgba(164,164,88,.74); }
+.era-card-mix .era-card-panel { background: rgba(235,184,63,.86); color: var(--ink); }
 .era-card-label, .era-card-number { font: 700 10px "Space Grotesk", sans-serif; letter-spacing: .14em; }
 .era-card-label { color: var(--mustard); }
 .era-card-mix .era-card-label { color: var(--ink); }
@@ -318,7 +317,7 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
   .step-top { margin-bottom: 32px; }
   .ramp-heading { padding-bottom: 50px; }
   .era-picker { grid-template-columns: 1fr; gap: 12px; padding: 34px 0 30px; }
-  .era-card button { min-height: 224px; padding: 18px; }
+  .era-card-panel { min-height: 224px; padding: 18px; }
   .era-card-mark { font-size: 65px; margin: 14px 0 5px; }
   .era-card-title { font-size: 27px; }
   .era-card-copy { max-width: 275px; }

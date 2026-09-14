@@ -126,7 +126,6 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [selectedEra, setSelectedEra] = useState("mix");
 
   function scrollTo(section: string) {
     document.querySelector(section)?.scrollIntoView({ behavior: "smooth" });
@@ -202,10 +201,10 @@ export default function Home() {
           <div className="ramp-sunburst" />
           <div className="page-width ramp-inner">
             <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / FIND YOUR ERA</div><h2>Pick your<br /><em>era.</em></h2></Reveal><Reveal delay={0.08}><p>Go all-in on one decade or make the rules your own. Choose the energy that gets you excited to walk through the door.</p><button className="button button-cream" onClick={() => setRegisterOpen(true)}>Register your look <ArrowUpRight size={17} /></button></Reveal></div>
-            <div className="era-picker" role="tablist" aria-label="Choose your retro era">
-              {[{ id: "70s", label: "THE 70s", title: "Disco fever", copy: "Flared confidence, shimmer, soul, and a little more sparkle than strictly necessary.", className: "era-card-70" }, { id: "80s", label: "THE 80s", title: "New wave", copy: "Power shoulders, arcade energy, pop icons, and colour that refuses to whisper.", className: "era-card-80" }, { id: "mix", label: "MIX IT UP", title: "Your own rules", copy: "Take the best bits of both decades and make a look nobody else could have planned.", className: "era-card-mix" }].map((era, index) => <Reveal key={era.id} delay={index * 0.08} className={`era-card ${era.className} ${selectedEra === era.id ? "selected" : ""}`}><button role="tab" aria-selected={selectedEra === era.id} onClick={() => setSelectedEra(era.id)}><span className="era-card-label">{era.label}</span><span className="era-card-number">0{index + 1}</span><span className="era-card-mark">{era.id === "70s" ? "✦" : era.id === "80s" ? "✳" : "✦✳"}</span><span className="era-card-title">{era.title}</span><span className="era-card-copy">{era.copy}</span><span className="era-card-action">{selectedEra === era.id ? "Selected" : "Choose this era"} <ArrowUpRight size={14} /></span></button></Reveal>)}
+            <div className="era-picker" aria-label="Retro era inspiration">
+              {[{ id: "70s", label: "THE 70s", title: "Disco fever", copy: "Flared confidence, shimmer, soul, and a little more sparkle than strictly necessary.", className: "era-card-70" }, { id: "80s", label: "THE 80s", title: "New wave", copy: "Power shoulders, arcade energy, pop icons, and colour that refuses to whisper.", className: "era-card-80" }, { id: "mix", label: "MIX IT UP", title: "Your own rules", copy: "Take the best bits of both decades and make a look nobody else could have planned.", className: "era-card-mix" }].map((era, index) => <Reveal key={era.id} delay={index * 0.08} className={`era-card ${era.className}`}><div className="era-card-panel"><span className="era-card-label">{era.label}</span><span className="era-card-number">0{index + 1}</span><span className="era-card-mark">{era.id === "70s" ? "✦" : era.id === "80s" ? "✳" : "✦✳"}</span><span className="era-card-title">{era.title}</span><span className="era-card-copy">{era.copy}</span><span className="era-card-action">Get inspired <ArrowUpRight size={14} /></span></div></Reveal>)}
             </div>
-            <div className="era-footer"><span><Sparkles size={17} /> YOUR ERA: <b>{selectedEra === "70s" ? "THE 70s" : selectedEra === "80s" ? "THE 80s" : "A MIX OF BOTH"}</b></span><span>JUDGES · LIVE MUSIC · PRIZES · AFTER-PARTY</span></div>
+            <div className="era-footer"><span><Sparkles size={17} /> PICK YOUR ERA: <b>70s · 80s · OR A MIX OF BOTH</b></span><span>JUDGES · LIVE MUSIC · PRIZES · AFTER-PARTY</span></div>
           </div>
         </section>
 
