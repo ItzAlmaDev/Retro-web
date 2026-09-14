@@ -155,11 +155,11 @@ export default function Home() {
         <section className="hero-section">
           <div className="hero-grid page-width">
             <div className="hero-copy">
-              <Reveal><div className="eyebrow"><span className="eyebrow-dot" /> [CITY] · DATE TBA</div></Reveal>
+              <Reveal><div className="eyebrow"><span className="eyebrow-dot" /> Ranchi · 30 September</div></Reveal>
               <Reveal delay={0.06}><h1>Dress loud.<br /><span>Walk proud.</span></h1></Reveal>
               <Reveal delay={0.12}><p className="hero-lede">A live costume contest for icons, misfits, and main characters from the 70s–80s. Bring the look. Own the room. Dance it out.</p></Reveal>
               <Reveal delay={0.18}><div className="hero-actions"><button className="button button-coral" onClick={() => setRegisterOpen(true)}>Register your look <ArrowUpRight size={17} /></button><button className="text-button" onClick={() => scrollTo("#the-vibe")}>See the vibe <ArrowDownRight size={17} /></button></div></Reveal>
-              <Reveal delay={0.24}><div className="hero-meta"><span><CalendarDays size={15} /> DATE — TBA</span><span className="meta-divider" /><span><MapPin size={15} /> VENUE TO BE ANNOUNCED</span></div></Reveal>
+              <Reveal delay={0.24}><div className="hero-meta"><span><CalendarDays size={15} /> DATE - 30/09/2026</span><span className="meta-divider" /><span><MapPin size={15} /> VENUE TO BE ANNOUNCED</span></div></Reveal>
             </div>
             <Reveal delay={0.12} className="hero-art-wrap">
               <div className="hero-art-frame">
@@ -200,9 +200,9 @@ export default function Home() {
         <section className="ramp-section section-pad" id="ramp-walk">
           <div className="ramp-sunburst" />
           <div className="page-width ramp-inner">
-            <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / EVENT SNAPSHOT</div><h2>Come for<br /><em>the moment.</em></h2></Reveal><Reveal delay={0.08}><p>A free-flowing night built for good looks, good music, and meeting people who know the difference between an outfit and an entrance.</p><button className="button button-cream" onClick={() => setRegisterOpen(true)}>Join the list <ArrowUpRight size={17} /></button></Reveal></div>
-            <div className="ramp-timeline"><Reveal><div className="timeline-item"><span>01</span><div><b>Doors open</b><p>Meet the crowd, take a photo, and settle into the throwback mood.</p></div></div></Reveal><Reveal delay={0.1}><div className="timeline-item"><span>02</span><div><b>Looks arrive</b><p>Bring your era, your crew, and your best entrance energy.</p></div></div></Reveal><Reveal delay={0.2}><div className="timeline-item"><span>03</span><div><b>Music starts</b><p>Dance floor favourites, live judging, and a soundtrack with range.</p></div></div></Reveal><Reveal delay={0.3}><div className="timeline-item"><span>04</span><div><b>Stay late</b><p>Photos, prizes, and an after-party made for one more song.</p></div></div></Reveal></div>
-            <div className="judging-row"><span><Users size={18} /> ALL ARE WELCOME</span><span><Trophy size={18} /> COSTUME CONTEST · PRIZES · CROWD FAVOURITE</span><span><Clock3 size={18} /> DATE — TBA</span></div>
+            <div className="ramp-heading"><Reveal><div className="section-kicker light">03 / PROGRAM DETAILS</div><h2>One night.<br /><em>Four big beats.</em></h2></Reveal><Reveal delay={0.08}><p>From the first entrance to the final encore, this is a live retro celebration with sharp looks, big sound, and prizes worth showing up for.</p><button className="button button-cream" onClick={() => setRegisterOpen(true)}>Join the list <ArrowUpRight size={17} /></button></Reveal></div>
+            <div className="ramp-timeline"><Reveal><div className="timeline-item"><span>01</span><div><b>Meet the judges</b><p>Our judging panel sets the tone and gets ready to score the boldest looks in the room.</p></div></div></Reveal><Reveal delay={0.1}><div className="timeline-item"><span>02</span><div><b>Dress-up contest</b><p>Walk in your 70s or 80s-inspired look and give the crowd a moment to remember.</p></div></div></Reveal><Reveal delay={0.2}><div className="timeline-item"><span>03</span><div><b>Live music</b><p>Turn up the throwback soundtrack with live performances and a dance floor built to move.</p></div></div></Reveal><Reveal delay={0.3}><div className="timeline-item"><span>04</span><div><b>Prizes + after-party</b><p>Celebrate the winners, crown the crowd favourite, and keep the music going late.</p></div></div></Reveal></div>
+            <div className="judging-row"><span><Users size={18} /> LIVE JUDGING</span><span><Trophy size={18} /> BEST 70s · BEST 80s · BEST GROUP · CROWD FAVOURITE</span><span><Clock3 size={18} /> 30 SEPTEMBER</span></div>
           </div>
         </section>
 
