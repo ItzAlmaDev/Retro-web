@@ -421,3 +421,8 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
 .phase-flow-note { margin: 12px auto 0; color: var(--muted-ink); text-align: center; font-size: 11px; }
 .register-form-grid input, .register-form-grid select { min-height: 48px; }.register-form-grid label { min-height: 91px; }.register-form-grid label.wide { min-height: auto; }
 @media (max-width: 680px) { .phase-flow { grid-template-columns: 1fr; gap: 12px; padding: 16px; }.phase-flow > i { width: 1px; height: 18px; margin-left: 16px; }.phase-flow-step { min-height: 38px; }.phase-flow-note { text-align: left; line-height: 1.5; }.register-form-grid label { min-height: 0; } }
+
+.register-page .register-section { padding-top: 54px; }
+.register-page .optional { display: none; }
+.phase-flow { border-radius: 18px; }
+@media (max-width: 680px) { .register-page .register-section { padding-top: 34px; } }
