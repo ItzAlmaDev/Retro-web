@@ -184,7 +184,6 @@ export default function Home() {
               <Reveal delay={0.08} className="vibe-card"><div className="vibe-illustration photo-art"><img className="vibe-photo vibe-photo-sari" src="/manus-storage/2_819fb2f4.jpeg" alt="Retro-inspired woman in an embellished white sari and statement jewellery" /></div><div className="vibe-card-footer"><span>02 / GLAMOUR HOUR</span><b>Turn it up</b></div></Reveal>
               <Reveal delay={0.16} className="vibe-card"><div className="vibe-illustration photo-art"><img className="vibe-photo vibe-photo-brown" src="/manus-storage/3_192e344c.jpeg" alt="Retro-inspired man in a tailored brown suit" /></div><div className="vibe-card-footer"><span>03 / POWER DRESSING</span><b>Be unforgettable</b></div></Reveal>
             </div>
-            <div className="decade-strip"><span>1970</span><div className="strip-line" /><span>1980</span><div className="strip-line" /><span>YOUR ERA</span><div className="strip-line" /><Sparkles size={18} /></div>
           </div>
         </section>
 
