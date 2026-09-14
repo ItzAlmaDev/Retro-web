@@ -65,9 +65,9 @@
 .button-cream:hover { background: var(--mustard); }
 .button-wide { width: 100%; }
 .mobile-toggle { display: none; border: 0; background: transparent; color: var(--ink); padding: 8px; }
-.hero-section { position: relative; background: var(--cream); padding: 90px 0 26px; }
+.hero-section { position: relative; background: var(--cream); padding: 38px 0 26px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(460px, 1.1fr); gap: 62px; align-items: center; }
-.hero-copy { padding: 22px 0 40px; position: relative; z-index: 2; }
+.hero-copy { padding: 8px 0 30px; position: relative; z-index: 2; }
 .eyebrow, .section-kicker, .ticket-label, .footer-label, .modal-kicker { font-family: "Space Grotesk", sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 23px; color: var(--muted-ink); }
 .eyebrow-dot { width: 7px; height: 7px; background: var(--coral); border-radius: 50%; box-shadow: 0 0 0 4px rgba(230,92,59,.12); }
