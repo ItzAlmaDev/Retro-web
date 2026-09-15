@@ -25,6 +25,7 @@ async function startServer() {
       fullName: clean(body.fullName),
       phone: clean(body.phone),
       email: clean(body.email),
+      instagram: clean(body.instagram),
       dateOfBirth: clean(body.dateOfBirth),
       decade: clean(body.decade),
       category: clean(body.category),

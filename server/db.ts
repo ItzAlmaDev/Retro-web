@@ -11,6 +11,7 @@ export type RegistrationInput = {
   fullName: string;
   phone: string;
   email?: string;
+  instagram?: string;
   dateOfBirth: string;
   decade: string;
   category: string;
@@ -38,6 +39,8 @@ export async function initDb() {
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
   )`);
+  const columns = database.exec("PRAGMA table_info(registrations)")[0]?.values.map((row) => row[1]) || [];
+  if (!columns.includes("instagram")) database.run("ALTER TABLE registrations ADD COLUMN instagram TEXT");
   persist();
 }
 
@@ -54,7 +57,7 @@ function one(sql: string, params: unknown[] = []) {
 export function createRegistration(input: RegistrationInput) {
   const registrationCode = `RETRO-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
   const paymentStatus = input.category === "general" ? "not_required" : "phase_2_pending";
-  database.run(`INSERT INTO registrations (registration_code, full_name, phone, email, date_of_birth, phone_verified, decade, category, companion_details, ramp_look, payment_status) VALUES (?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?)`, [registrationCode, input.fullName, input.phone, input.email || null, input.dateOfBirth, input.decade, input.category, input.companionDetails || null, input.rampLook || null, paymentStatus]);
+  database.run(`INSERT INTO registrations (registration_code, full_name, phone, email, instagram, date_of_birth, phone_verified, decade, category, companion_details, ramp_look, payment_status) VALUES (?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?)`, [registrationCode, input.fullName, input.phone, input.email || null, input.instagram || null, input.dateOfBirth, input.decade, input.category, input.companionDetails || null, input.rampLook || null, paymentStatus]);
   persist();
   return one("SELECT * FROM registrations WHERE registration_code = ?", [registrationCode]) as { registration_code: string; payment_status: string };
 }
