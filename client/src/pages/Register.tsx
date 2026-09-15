@@ -3,10 +3,10 @@ import { useMemo, useState, type FormEvent } from "react";
 
 const ticketOptions = [
   { id: "general", title: "General entry", subtitle: "Watch the looks. Cheer loud.", price: 0, spots: 180 },
-  { id: "solo", title: "Contestant · Ramp Walk", subtitle: "One look. One unforgettable entrance.", price: 999, spots: 42 },
-  { id: "group", title: "Group entry", subtitle: "For crews and coordinated energy", price: 1999, spots: 12 },
+  { id: "solo", title: "Contestant", subtitle: "One look. One unforgettable entrance.", price: 999, spots: 42 },
+  { id: "group", title: "Couple/Duo", subtitle: "For couples and coordinated energy", price: 1999, spots: 12 },
 ] as const;
-const categoryLabels: Record<string, string> = { solo: "Contestant · Ramp Walk", group: "Group entry", general: "General entry" };
+const categoryLabels: Record<string, string> = { solo: "Contestant", group: "Couple/Duo", general: "General entry" };
 
 function SiteHeader() { return <header className="site-header"><div className="header-inner"><a className="brand" href="/" aria-label="Retro Event home"><span className="brand-wordmark">RETRO <em>EVENT</em></span></a><a className="back-link" href="/"><ArrowLeft size={15} /> Back to event</a></div></header>; }
 function InlineError({ children }: { children: string }) { return <small className="inline-error"><CircleAlert size={13} /> {children}</small>; }
