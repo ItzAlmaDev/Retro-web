@@ -439,3 +439,7 @@ h2 { font-size: clamp(58px, 7vw, 100px); line-height: .86; color: var(--ink); }
 /* Sleek review footer treatment */
 .payment-note-inline { display: flex; align-items: center; gap: 7px; margin: 13px 2px 0; color: var(--muted-ink); font-size: 11px; line-height: 1.4; }.payment-note-inline svg { flex: 0 0 auto; color: var(--coral); }.register-stub .agreement { margin: 18px 2px 0; padding: 13px 14px; border: 1px solid var(--line); border-radius: 9px; background: rgba(247,241,228,.7); }.register-stub .agreement input { margin-top: 2px; }
 @media (max-width: 680px) { .payment-note-inline { align-items: flex-start; }.register-stub .agreement { padding: 12px; } }
+
+/* Progress connectors sit between labels instead of inside their text blocks */
+.register-progress { align-items: flex-start; }.register-progress > span { position: relative; min-width: 0; }.register-progress > span:not(:last-child)::after { content: ""; position: absolute; top: 5px; left: calc(100% + 7px); width: calc(100% - 14px); height: 1px; background: var(--line); }.register-progress > span small { position: relative; z-index: 1; background: var(--cream); padding-right: 4px; }
+@media (max-width: 680px) { .register-progress > span:not(:last-child)::after { top: 5px; left: calc(100% + 3px); width: calc(100% - 6px); }.register-progress > span small { padding-right: 2px; } }
